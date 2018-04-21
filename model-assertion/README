@@ -1,0 +1,17 @@
+imx6ul-eisd-model-assertion.json
+================================
+timestamp: date -Iseconds --utc
+
+
+snap keys
+=========
+snapcraft login
+snap login you@yourdomain.com
+snap keys
+snap create-key my-key
+snapcraft register-key my-key
+
+
+imx6ul-eisd.model
+=================
+cat imx6ul-eisd-model-assertion.json | snap sign -k my-key &> imx6ul-eisd.model

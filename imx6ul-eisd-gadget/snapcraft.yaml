@@ -1,0 +1,68 @@
+name: imx6ul-eisd-gadget
+version: 16.01-1
+summary: Chipsee imx6ul-eisd gadget
+description: |
+ Support files for booting Chipsee imx6ul-eisd
+type: gadget
+architectures:
+  - armhf
+confinement: devmode
+grade: stable
+parts:
+  uboot:
+    plugin: make
+    source: https://github.com/leavs/uboot-2015.04.git
+    source-branch: master
+    source-type: git
+    prepare: |
+      make mx6uleisd_defconfig
+    build: |
+      if [ "$(arch)" = "x86_64" ]; then
+        if [ ! -x /usr/bin/arm-linux-gnueabihf-gcc ]; then
+          echo "ERROR: You are cross building this snap, please install gcc-arm-linux-gnueabihf"
+          exit 1
+        fi
+        CROSS_COMPILE=arm-linux-gnueabihf- make
+      else
+        make
+      fi
+    install: |
+      mkdir -p $SNAPCRAFT_PART_INSTALL/boot-assets
+      cp u-boot.imx $SNAPCRAFT_PART_INSTALL/boot-assets/uboot.imx
+      tools/mkenvimage -r -s 131072 -o $SNAPCRAFT_PART_INSTALL/uboot.env ../../../uboot.env.in
+      ln -s uboot.env $SNAPCRAFT_PART_INSTALL/uboot.conf
+    build-packages:
+      - bc
+      - libpython2.7-dev
+      - python-minimal
+slots:
+  gpio-0:
+    interface: gpio
+    number: 0
+  gpio-1:
+    interface: gpio
+    number: 1
+  gpio-2:
+    interface: gpio
+    number: 2
+  gpio-3:
+    interface: gpio
+    number: 3
+  gpio-4:
+    interface: gpio
+    number: 137
+  gpio-5:
+    interface: gpio
+    number: 136
+  gpio-6:
+    interface: gpio
+    number: 8
+  gpio-7:
+    interface: gpio
+    number: 4
+  i2c-0:
+    interface: i2c
+    path: /dev/i2c-0
+  i2c-1:
+    interface: i2c
+    path: /dev/i2c-1

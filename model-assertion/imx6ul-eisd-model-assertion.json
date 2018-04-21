@@ -1,0 +1,11 @@
+{
+  "type": "model",
+  "authority-id": "VFR5jXtU679eyJ2d9vcR3yMxIG2wCnut",
+  "brand-id": "VFR5jXtU679eyJ2d9vcR3yMxIG2wCnut",
+  "series": "16",
+  "model": "imx6ul-eisd-model",
+  "architecture": "armhf",
+  "gadget": "imx6ul-eisd-gadget",
+  "kernel": "imx6ul-eisd-kernel",
+  "timestamp": "2018-04-16T08:16:23+00:00"
+}

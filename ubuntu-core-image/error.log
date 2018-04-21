@@ -1,0 +1,93 @@
+xiaoqiang@ubuntu:~/imx6ul-ubuntuCore-build/ubuntu-core-image$ ubuntu-image -c beta --image-size 4G --extra-snaps imx6ul-eisd-gadget_16.01-1_armhf.snap --extra-snaps imx6ul-eisd-kernel_3.14.52_armhf.snap -O imx6ul-eisd-20180421 imx6ul-eisd.model --debug
+Warning: for backwards compatibility, `ubuntu-image` fallbacks to `ubuntu-image snap` if no subcommand is given
+DEBUG:ubuntu-image:-> [ 0] make_temporary_directories
+DEBUG:ubuntu-image:-> [ 1] prepare_gadget_tree
+DEBUG:ubuntu-image:-> [ 2] prepare_image
+Fetching core
+Copying "imx6ul-eisd-kernel_3.14.52_armhf.snap" (imx6ul-eisd-kernel)
+Copying "imx6ul-eisd-gadget_16.01-1_armhf.snap" (imx6ul-eisd-gadget)
+imx6ul-eisd-gadget already prepared, skipping
+imx6ul-eisd-kernel already prepared, skipping
+WARNING: "imx6ul-eisd-kernel", "imx6ul-eisd-gadget" were installed from local snaps disconnected from a store and cannot be refreshed subsequently!
+DEBUG:ubuntu-image:-> [ 3] load_gadget_yaml
+ERROR:ubuntu-image:uncaught exception in state machine step: [3] load_gadget_yaml
+Traceback (most recent call last):
+  File "/snap/ubuntu-image/95/lib/python3/site-packages/ubuntu_image/parser.py", line 299, in parse
+    yaml = load(stream, Loader=StrictLoader)
+  File "/snap/ubuntu-image/95/lib/python3/site-packages/yaml/__init__.py", line 72, in load
+    return loader.get_single_data()
+  File "/snap/ubuntu-image/95/lib/python3/site-packages/yaml/constructor.py", line 35, in get_single_data
+    node = self.get_single_node()
+  File "/snap/ubuntu-image/95/lib/python3/site-packages/yaml/composer.py", line 36, in get_single_node
+    document = self.compose_document()
+  File "/snap/ubuntu-image/95/lib/python3/site-packages/yaml/composer.py", line 55, in compose_document
+    node = self.compose_node(None, None)
+  File "/snap/ubuntu-image/95/lib/python3/site-packages/yaml/composer.py", line 84, in compose_node
+    node = self.compose_mapping_node(anchor)
+  File "/snap/ubuntu-image/95/lib/python3/site-packages/yaml/composer.py", line 127, in compose_mapping_node
+    while not self.check_event(MappingEndEvent):
+  File "/snap/ubuntu-image/95/lib/python3/site-packages/yaml/parser.py", line 98, in check_event
+    self.current_event = self.state()
+  File "/snap/ubuntu-image/95/lib/python3/site-packages/yaml/parser.py", line 428, in parse_block_mapping_key
+    if self.check_token(KeyToken):
+  File "/snap/ubuntu-image/95/lib/python3/site-packages/yaml/scanner.py", line 116, in check_token
+    self.fetch_more_tokens()
+  File "/snap/ubuntu-image/95/lib/python3/site-packages/yaml/scanner.py", line 220, in fetch_more_tokens
+    return self.fetch_value()
+  File "/snap/ubuntu-image/95/lib/python3/site-packages/yaml/scanner.py", line 576, in fetch_value
+    self.get_mark())
+yaml.scanner.ScannerError: mapping values are not allowed here
+  in "/tmp/tmpjraf083v/unpack/gadget/meta/gadget.yaml", line 2, column 12
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/snap/ubuntu-image/95/lib/python3/site-packages/ubuntu_image/state.py", line 82, in __next__
+    step()
+  File "/snap/ubuntu-image/95/lib/python3/site-packages/ubuntu_image/common_builder.py", line 132, in load_gadget_yaml
+    self.gadget = parse_yaml(fp)
+  File "/snap/ubuntu-image/95/lib/python3/site-packages/ubuntu_image/parser.py", line 302, in parse
+    'gadget.yaml file is not valid YAML') from error
+ubuntu_image.parser.GadgetSpecificationError: gadget.yaml file is not valid YAML
+ERROR:ubuntu-image:gadget.yaml parse error
+Traceback (most recent call last):
+  File "/snap/ubuntu-image/95/lib/python3/site-packages/ubuntu_image/parser.py", line 299, in parse
+    yaml = load(stream, Loader=StrictLoader)
+  File "/snap/ubuntu-image/95/lib/python3/site-packages/yaml/__init__.py", line 72, in load
+    return loader.get_single_data()
+  File "/snap/ubuntu-image/95/lib/python3/site-packages/yaml/constructor.py", line 35, in get_single_data
+    node = self.get_single_node()
+  File "/snap/ubuntu-image/95/lib/python3/site-packages/yaml/composer.py", line 36, in get_single_node
+    document = self.compose_document()
+  File "/snap/ubuntu-image/95/lib/python3/site-packages/yaml/composer.py", line 55, in compose_document
+    node = self.compose_node(None, None)
+  File "/snap/ubuntu-image/95/lib/python3/site-packages/yaml/composer.py", line 84, in compose_node
+    node = self.compose_mapping_node(anchor)
+  File "/snap/ubuntu-image/95/lib/python3/site-packages/yaml/composer.py", line 127, in compose_mapping_node
+    while not self.check_event(MappingEndEvent):
+  File "/snap/ubuntu-image/95/lib/python3/site-packages/yaml/parser.py", line 98, in check_event
+    self.current_event = self.state()
+  File "/snap/ubuntu-image/95/lib/python3/site-packages/yaml/parser.py", line 428, in parse_block_mapping_key
+    if self.check_token(KeyToken):
+  File "/snap/ubuntu-image/95/lib/python3/site-packages/yaml/scanner.py", line 116, in check_token
+    self.fetch_more_tokens()
+  File "/snap/ubuntu-image/95/lib/python3/site-packages/yaml/scanner.py", line 220, in fetch_more_tokens
+    return self.fetch_value()
+  File "/snap/ubuntu-image/95/lib/python3/site-packages/yaml/scanner.py", line 576, in fetch_value
+    self.get_mark())
+yaml.scanner.ScannerError: mapping values are not allowed here
+  in "/tmp/tmpjraf083v/unpack/gadget/meta/gadget.yaml", line 2, column 12
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/snap/ubuntu-image/95/lib/python3/site-packages/ubuntu_image/__main__.py", line 341, in main
+    list(state_machine)
+  File "/snap/ubuntu-image/95/lib/python3/site-packages/ubuntu_image/state.py", line 82, in __next__
+    step()
+  File "/snap/ubuntu-image/95/lib/python3/site-packages/ubuntu_image/common_builder.py", line 132, in load_gadget_yaml
+    self.gadget = parse_yaml(fp)
+  File "/snap/ubuntu-image/95/lib/python3/site-packages/ubuntu_image/parser.py", line 302, in parse
+    'gadget.yaml file is not valid YAML') from error
+ubuntu_image.parser.GadgetSpecificationError: gadget.yaml file is not valid YAML
+

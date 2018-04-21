@@ -1,0 +1,21 @@
+type: model
+authority-id: VFR5jXtU679eyJ2d9vcR3yMxIG2wCnut
+series: 16
+brand-id: VFR5jXtU679eyJ2d9vcR3yMxIG2wCnut
+model: imx6ul-eisd-model
+architecture: armhf
+gadget: imx6ul-eisd-gadget
+kernel: imx6ul-eisd-kernel
+timestamp: 2018-04-16T08:16:23+00:00
+sign-key-sha3-384: 77wfnZt14GBRTPLtBUcCCqQV1Gig7qknT5hMeTe7NpbUEMCmuI2rXQs4PWz5n4Kl
+
+AcLBXAQAAQoABgUCWtRcdwAKCRAKrDILn5oV5kCxD/9zZIEr06MW8MZZORM06Y0y/ifBXsV7Blv2
+v2CDc4tRdsYPhc0/ogzXsSrvk12Zstnf0WcJ4RdVSzzUsqFd8IS4l08kPrRqbTIEoKjYRzlv9oQk
+h9Mh/AaSZgPpeeukM0XuWxbRU03I7+Kb+B2OEGTdFeD3a6A+BZQTxCB+74kHUGgaU5u8gDxJn5A+
+zDd8K5FWESx1QNFGN4FtZLIqYmIu8lYWuEpxI4Kulc3PJb9Ig0J8W+49VSaDeRqXxoKj47Vm+zs2
+8yaQ9r6HmQjeOqX994C+MiOUbSgwUjyPjSJBAF7QMlXG1cCOSB7iqiUl5FmvQqwPzuKGOa3/baS5
+/jJ6Nclde41CPxkxEQFqsisP7zzB96O5g3k4075n0t02+Z5SjxV3xaU7sntQB5q2nPsN2DUcPDNX
+dmpAyClu6h0tGm1iqm6wkwz6084ZGwKqF2gmTsXsKpbKbZboPTR2jT7IECrZBfbXIu7Aqohf+ZEL
+Ea/y5OpxE2a8DfAfCnGmOaRRH1jqcWjHqkBu9K8bndXtj6aAl/HMzna6zf5yCqp0sXju+BT58EoP
+ryUhZ4J9rR/3ZGbhawCB+Ad0yrq1V4OVBP0hCfLpGIR5REsWan3M51Yx1d9unvpIrQ/I82Mkggj/
+kaH5PwlIZAf4K0JP9NF0iGogYAqWBnL7qTqfjh/r4A==
