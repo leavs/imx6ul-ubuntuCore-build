@@ -6,6 +6,6 @@
   "model": "imx6ul-eisd-model",
   "architecture": "armhf",
   "gadget": "imx6ul-eisd-gadget",
-  "kernel": "imx6ul-eisd-kernel",
-  "timestamp": "2018-04-16T08:16:23+00:00"
+  "kernel": "imx6uleisd-kernel",
+  "timestamp": "2018-04-22T02:03:47+00:00"
 }

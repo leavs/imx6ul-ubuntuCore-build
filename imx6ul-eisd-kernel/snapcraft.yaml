@@ -1,4 +1,4 @@
-name: imx6ul-eisd-kernel
+name: imx6uleisd-kernel
 version: 3.14.52
 summary: Chipsee imx6ul-eisd kernel snap
 description: This is a kernel snap for imx6ul-eisd built using snappy_imx6ul_eisd_defconfig which plus the minimal snappy config changes based on imx6ul_eisd_defconfig
