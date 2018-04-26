@@ -14,9 +14,10 @@ parts:
     source: https://github.com/leavs/uboot-2015.04.git
     source-branch: master
     source-type: git
-    override-build: |
+    prepare: |
       git apply ../../../uboot.patch
       make mx6uleisd_defconfig
+    build: |
       if [ "$(arch)" = "x86_64" ]; then
         if [ ! -x /usr/bin/arm-linux-gnueabihf-gcc ]; then
           echo "ERROR: You are cross building this snap, please install gcc-arm-linux-gnueabihf"
@@ -26,6 +27,7 @@ parts:
       else
         make
       fi
+    install: | 
       mkdir -p $SNAPCRAFT_PART_INSTALL/boot-assets
       cp u-boot.imx $SNAPCRAFT_PART_INSTALL/boot-assets/uboot.imx
       tools/mkenvimage -r -s 131072 -o $SNAPCRAFT_PART_INSTALL/uboot.env ../../../uboot.env.in
