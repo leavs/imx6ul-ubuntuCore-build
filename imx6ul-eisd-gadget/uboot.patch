@@ -1,0 +1,40 @@
+diff --git a/include/configs/mx6uleisd.h b/include/configs/mx6uleisd.h
+index 4578b01..7f06f4d 100644
+--- a/include/configs/mx6uleisd.h
++++ b/include/configs/mx6uleisd.h
+@@ -97,7 +97,6 @@
+ #define CONFIG_SERVERIP				192.168.6.14
+ #define CONFIG_IPADDR				192.168.6.100
+ #define CONFIG_NFSROOT				/opt/nfsroot
+-#endif
+ 
+ /* allow to overwrite serial and ethaddr */
+ #define CONFIG_ENV_OVERWRITE
+@@ -284,9 +283,10 @@
+ /* FLASH and environment organization */
+ #define CONFIG_SYS_NO_FLASH
+ 
+-#define CONFIG_ENV_SIZE				SZ_8K
++#define CONFIG_ENV_SIZE				SZ_128K
+ 
+ #define CONFIG_ENV_IS_IN_MMC
++#undef CONFIG_ENV_IS_IN_MMC
+ #if defined(CONFIG_ENV_IS_IN_MMC)
+ #define CONFIG_ENV_OFFSET			(8 * SZ_64K)
+ #endif
+@@ -330,3 +330,15 @@
+ #define CONFIG_MXC_USB_FLAGS			0
+ #define CONFIG_USB_MAX_CONTROLLER_COUNT	2
+ #endif
++
++/* Ubuntu Core Configs */
++#define CONFIG_ENV_IS_IN_FAT
++#define CONFIG_FAT_WRITE
++#define FAT_ENV_INTERFACE      "mmc"
++#define FAT_ENV_DEVICE_AND_PART        "0:1"
++#define FAT_ENV_FILE           "uboot.env"
++#define CONFIG_SUPPORT_RAW_INITRD
++#define CONFIG_SYS_REDUNDAND_ENVIRONMENT
++#define CONFIG_CMD_SETEXPR
++
++#endif /* __MX6ULEISD_CONFIG_H */
